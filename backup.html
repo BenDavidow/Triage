@@ -1,0 +1,104 @@
+<!doctype html>
+ 
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>jQuery UI Slider - Multiple sliders</title>
+  <link rel="stylesheet" href="slider.css" />
+  <script src="jquery-1.9.1.js"></script>
+  <script src="jquery-ui-1.10.2.custom.js"></script>
+  <script src="triage.js"></script>
+  <style>
+  </style>
+  <script>
+  $(function() {
+    $(".food_type").each(function() {
+      // read initial values from markup and remove that
+      var value = parseInt( $(this).text(), 10 );
+      $(this).empty().slider({
+        value: value,
+        range: "min",
+        animate: true,
+        orientation: "vertical",
+        change: function() {
+          calculate()
+        }
+      }); // end this
+    }); // end each
+  }); // end function
+  </script>
+</head>
+<body>
+ 
+
+<h2>Visualize the Impact of Spreading Compassionate Food Choices</h2> 
+<div class="description">
+  <p>This interactive chart breaks down the impact of getting people to give up different animal foods. It begins at an average American's annual consumption level by percentage. If you beef half way down that equals consumers splitting consumption in half</p>
+</div> <!-- end description-->
+
+
+
+
+<input type="button" value="reset" id="reset">
+ 
+<div id="foods">
+  
+  <div id="chicken">
+      <div class="kg">87</div>
+        <div class="food_type">80</div>
+              <div class="label">Chicken</div>
+  </div>
+   
+ <div id="eggs">
+    <div class="kg">87</div>
+      <div class="food_type">80</div>
+        <div class="label">Eggs</div>
+  </div>
+
+  <div id="pork">
+    <div class="kg">87</div>
+      <div class="food_type">80</div>
+        <div class="label">Pork</div>
+  </div>
+
+  <div id="beef">
+    <div class="kg">87</div>
+      <div class="food_type">80</div>
+        <div class="label">Beef</div>
+  </div>
+
+  <div id="dairy">
+    <div class="kg">87</div>
+      <div class="food_type">80</div>
+        <div class="label">Dairy</div>
+  </div>
+
+
+
+
+ </div>
+
+<div class="suffering">
+  <div class="dairy_suffer"></div>
+  <div class="beef_suffer"></div>
+  <div class="pork_suffer"></div>
+  <div class="eggs_suffer"></div>
+  <div class="chicken_suffer"></div>
+  <p>Days of Suffering<p>
+</div>
+
+<div id="lives">
+  <p>Number of Animal Deaths</p>
+</div>
+
+<div id="about">
+<p>Why is chicken consumption responsible for so much suffering? Because chickens are so much smaller than cows and pigs. To get the same amount of meat that can be obtained from a single cow (or four pigs), more than 200 chickens must be killed. That’s why, despite the fact that people eat almost as much pork and beef as they do chicken, they eat many, many more chickens than they do cows or pigs. Additionally, chickens (both raised for meat and eggs) tend to be treated more severely than other farm animals. As Nick Cooney and I argue here, we reduce more suffering and protect more animals from harm when we focus our outreach on chickens and eggs. And we may have a greater impact if we tell people to reduce consumption of chickens (and eggs) rather than all animal products.</p>
+
+<a href="method.html">methodology</a>
+
+</div> <!-- end about -->
+
+ 
+ 
+</body>
+</html>
